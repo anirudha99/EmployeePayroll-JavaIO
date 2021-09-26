@@ -60,12 +60,22 @@ public class EmployeePayrollService {
 		System.out.println("\nWriting Employee Payroll to Console \n" + employeePayrollList);
 	}
 
+	/*
+	 * method to print employee detail to console from file
+	 */
+	public void printData() {
+		new EmployeePayrollFileIOService().printData();
+	}
+
 	public static void main(String[] args) {
 		ArrayList<EmployeePayrollData> employeePayrollList = new ArrayList<>();
 		EmployeePayrollService employeePayrollService = new EmployeePayrollService(employeePayrollList);
 		Scanner consoleInputReader = new Scanner(System.in);
 		employeePayrollService.readEmployeePayrollData(consoleInputReader);
 		employeePayrollService.writeEmployeePayrollData(consoleInputReader);
+		System.out.println(
+				"The number of entries in the file are: " + employeePayrollService.countEntries(IOService.FILE_IO));
+		employeePayrollService.printData();
 		consoleInputReader.close();
 	}
 }
