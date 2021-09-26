@@ -1,0 +1,3 @@
+id:1 name:John salary:15000.0
+id:2 name:Tony salary:30000.0
+id:3 name:Steve salary:45000.0
